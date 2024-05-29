@@ -1,51 +1,70 @@
-### Third-Party-APIs
-In this app i worked withThird-Party APIs by implementing functions and create a time management app.
+# Task Board
 
+## Description
+The Task Board is a web application that allows a team to manage project tasks efficiently. It provides features to add, delete, and update tasks, while also categorizing them into different progress states. This application leverages Third-Party APIs and libraries to enhance its functionality.
 
-#Create a function to generate a unique task id
- The concept behind generating a unique task ID using a timestamp and a random number is to create a distinct identifier for each task that is both unique and difficult to predict. This unique task ID can be useful in various applications 
- where tasks need to be tracked, stored, or referenced uniquely.
+## Features
+- **Task Management**: Add, delete, and update tasks with ease.
+- **Progress Tracking**: Tasks are categorized into columns representing different progress states (Not Yet Started, In Progress, Completed).
+- **Color Coding**: Tasks are color-coded based on their due dates to indicate their status (yellow for nearing deadline, red for overdue).
+- **Persistent Storage**: Tasks are saved in local storage, ensuring they persist after page refresh.
+- **Drag and Drop**: Drag tasks between columns to update their progress state.
 
-#Create a function to create a task card
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+- Font Awesome
+- jQuery
+- jQuery UI
+- Day.js
 
-The concept of creating a task card in a full-stack application involves designing a visual representation of a task that includes key information such as the task title, description, deadline, status, and any other relevant details. Task cards are commonly used in project management applications to display and manage individual tasks within a project.Task Details: A task card typically includes essential details about a task, such as the title (or name) of the task, a brief description explaining the task, the deadline by which the task needs to be completed, and possibly additional information like task status, priority, or assigned team member.
+## Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/fgsdeve/Task-Board
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd Task-Board
+    ```
+3. Open `index.html` in your preferred web browser.
 
+## Usage
+1. Click the "Add Task" button to open the task creation modal.
+2. Enter the task title, description, and due date, then click "Add Task".
+3. View and manage tasks in the columns representing their progress states.
+4. Drag and drop tasks between columns to update their status.
+5. Click the delete button on a task card to remove it from the board.
 
-#Create HTML structure using template literals
+## Detailed Changes and Concepts
 
-Using template literals in JavaScript allows you to create dynamic strings with embedded expressions. When creating HTML structures using template literals, you can easily generate complex HTML elements with dynamic content based on variables or data. Template Literal Syntax: Template literals are enclosed in backticks (`). Within a template literal, you can include placeholders ${} to insert expressions or variables.
+### Unique Task ID Generation
+A function was created to generate a unique task ID using a combination of a timestamp and a random number. This ensures each task has a distinct identifier, which is useful for tracking, storing, and referencing tasks.
 
-Dynamic Content: By using template literals, you can dynamically generate HTML content by interpolating variables, expressions, or function calls within the ${} placeholders.
-Multi-line Strings: Template literals support multi-line strings, making it easier to create structured HTML elements with proper indentation for readability.
+### Task Card Creation
+A function was implemented to create task cards that visually represent tasks. Each card includes the task title, description, and deadline. This is crucial for project management applications to display and manage individual tasks effectively.
 
+### HTML Structure Using Template Literals
+Template literals in JavaScript were used to dynamically create HTML structures. This allows for easy generation of complex HTML elements with dynamic content based on variables or data. It supports multi-line strings and dynamic data binding, making the code more concise and readable.
 
-#HTML Element Generation: You can use template literals to construct HTML elements, including tags, attributes, and content, in a concise and readable manner.
- Dynamic Data Binding: Template literals allow you to bind dynamic data to HTML content, enabling the creation of reusable templates that can be populated with different data sets.
+### Persistent Storage
+Tasks are stored in local storage to ensure they persist after page refresh. This is implemented using `localStorage` in JavaScript.
 
-Table of Contents
-Installation
-Usage
-Credits
-License
-Installation
-(https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">)
-# https://code.jquery.com/jquery-3.4.1.min.js
-# https://code.jquery.com/ui/1.13.1/jquery-ui.min.js
-# https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-# Xpert Learning. 
+### Drag and Drop Functionality
+Tasks can be dragged and dropped between columns to update their progress state. This is achieved using jQuery UI's `draggable` and `droppable` components.
 
-N/A
-Credits
-License
+## Resources Used
+- [Bootstrap 5](https://getbootstrap.com/docs/5.1/getting-started/introduction/) for responsive design.
+- [Font Awesome](https://fontawesome.com/) for icons.
+- [jQuery](https://jquery.com/) for simplified DOM manipulation.
+- [jQuery UI](https://jqueryui.com/) for drag and drop functionality.
+- [Day.js](https://day.js.org/) for date manipulation.
+
+## Credits
+This project was inspired by a coding challenge and developed by Francisco.
+
+## License
 MIT License
 
-Copyright (c) [2024] [FGDdeve]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-Features
-# HTML, Style.css, Bootstraps, Java Script, 
