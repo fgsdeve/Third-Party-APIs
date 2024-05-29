@@ -64,6 +64,7 @@ Tasks can be dragged and dropped between columns to update their progress state.
 
 ## Credits
 This project was inspired by a coding challenge and developed by Francisco.
+https://fgsdeve.github.io/Third-Party-APIs/
 
 ## License
 MIT License
