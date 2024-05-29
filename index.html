@@ -10,19 +10,34 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Task Board</title>
 </head>
 
 <body>
     <header class="p-4 mb-4 text-center border-bottom border-5">
         <h1 class="display-3">Task Board</h1>
-        <p class="lead">task management</p>
+        <p class="lead">Task management</p>
     </header>
     <div class="container">
         <div class="text-center mb-5">
             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add Task</button>
         </div>
+        <div class="swim-lanes">
+            <div class="swim-lane" id="NotYetStarted">
+                <h3>Not Yet Started</h3>
+                <div class="card-body"></div>
+            </div>
+            <div class="swim-lane" id="InProgress">
+                <h3>In Progress</h3>
+                <div class="card-body"></div>
+            </div>
+            <div class="swim-lane" id="Completed">
+                <h3>Completed</h3>
+                <div class="card-body"></div>
+            </div>
+        </div>
+
         <!-- Modal for adding a task -->
         <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -51,9 +66,8 @@
                 </div>
             </div>
         </div>
-
-      
     </div>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -61,7 +75,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
         integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/scrip.js"></script>
 </body>
 
 </html>

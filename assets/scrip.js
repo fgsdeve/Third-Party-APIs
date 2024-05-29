@@ -4,15 +4,67 @@ let nextId = JSON.parse(localStorage.getItem("nextId")) || 1;
 
 // Todo: create a function to generate a unique task id
 function generateTaskId() {
-    const timestamp = dayjs().format('dddd-MMMM-D-YYYY-h-mm-A'); // Get timestamp in a specific format
-    const randomNumber = Math.floor(Math.random() * 1000); // Generate a random number between 0 and 999
-    const uniqueId = `${timestamp}-${randomNumber}`; // Combine timestamp and random number for a unique ID
-    return uniqueId;
+    return nextId++;
 }
 
 // Generate a unique task ID
-const taskId = generateTaskId();
-console.log('Generated Task ID:', taskId);
+function createTaskCard(task){
+    const taskCard = document.createElement('div');
+    taskCard.classList.add('task-card', 'card', 'mb-3');
+    taskCard.dataset.taskId = taskId;
+
+    const dueDate = dayjs(task.deadline);
+    const today = dayjs();
+    if(!dueDate.isBefore(today)){
+        taskCard.classList.add('task-overdue');
+    }else if (dueDate.isBefore(today.add(3, 'day'))) {
+        taskCard.classList.add('task-due-soon');
+    }
+
+    taskCard.innerHTML = `
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="card-title mb-0">${task.title}</h5>
+        <button class="btn btn-danger btn-sm delete-task-btn">Delete</button>
+    </div>
+    <div class="card-body">
+        <p class="card-text">${task.description}</p>
+        <p class="card-text"><strong>Due Date:</strong> ${task.deadline}</p>
+    </div>
+`;
+
+const deleteButton = taskCard.querySelector('.delete-task-btn');
+deleteButton.addEventListener('click', handleAddTask);
+
+return taskCard;
+
+}
+
+function renderTaskList() {
+    const columns = {
+        'Not Yet Started': document.getElementById('NotYetStarted').querySelector('.card-body'),
+        'In Progress': document.getElementById('InProgress').querySelector('.card-body'),
+        'Completed': document.getElementById('Completed').querySelector('.card-body')
+    };
+
+    Object.values(columns).forEach(column => column.innerHTML = '');
+
+    taskList.forEach(task => {
+        const taskCard = createTaskCard(task);
+        columns[task.status].appendChild(taskCard);
+    });
+
+    $('.task-card').draggable({
+        revert: 'invalid',
+        start: function() {
+            $(this).css('opacity', '0.5');
+        },
+        stop: function() {
+            $(this).css('opacity', '1');
+
+        }
+    });
+}
+
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
@@ -57,7 +109,7 @@ function handleAddTask(event) {
     const dueDate = document.getElementById('due-Date').value;
 
     const newTask = {
-        id: nextId,
+        id: generateTaskId(),
         title: taskName,
         description: taskDescription,
         deadline: dueDate,
